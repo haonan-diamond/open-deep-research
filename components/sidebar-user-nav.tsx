@@ -49,7 +49,7 @@ export function SidebarUserNav({ user }: { user: User }) {
               {`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}
             </DropdownMenuItem> */}
             {/* <DropdownMenuSeparator /> */}
-            <DropdownMenuItem asChild>
+            {/* <DropdownMenuItem asChild>
               <button
                 type="button"
                 className="w-full cursor-pointer"
@@ -59,7 +59,7 @@ export function SidebarUserNav({ user }: { user: User }) {
               >
                 Visit Firecrawl
               </button>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
             <DropdownMenuItem asChild>
               <button
                 type="button"

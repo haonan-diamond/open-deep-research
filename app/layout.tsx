@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { DeepResearchProvider } from '@/lib/deep-research-context';
 
 import './globals.css';
+import { ClerkProvider } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://extract.chat'),

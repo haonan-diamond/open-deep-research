@@ -1,79 +1,79 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useWindowSize } from 'usehooks-ts';
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useWindowSize } from 'usehooks-ts'
 
-import { ModelSelector } from '@/components/model-selector';
-import { SidebarToggle } from '@/components/sidebar-toggle';
-import { Button } from '@/components/ui/button';
-import { PlusIcon, VercelIcon } from './icons';
-import { useSidebar } from './ui/sidebar';
-import { memo, useEffect } from 'react';
-import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
-import { VisibilityType, VisibilitySelector } from './visibility-selector';
-import { useDeepResearch } from '@/lib/deep-research-context';
-import { models, reasoningModels } from '@/lib/ai/models';
+import { ModelSelector } from '@/components/model-selector'
+import { SidebarToggle } from '@/components/sidebar-toggle'
+import { Button } from '@/components/ui/button'
+import { PlusIcon, VercelIcon } from './icons'
+import { useSidebar } from './ui/sidebar'
+import { memo, useEffect } from 'react'
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
+import { VisibilityType, VisibilitySelector } from './visibility-selector'
+import { useDeepResearch } from '@/lib/deep-research-context'
+import { models, reasoningModels } from '@/lib/ai/models'
 
-function PureChatHeader({
+function PureChatHeader ({
   chatId,
   selectedModelId,
   selectedReasoningModelId,
   selectedVisibilityType,
-  isReadonly,
+  isReadonly
 }: {
-  chatId: string;
-  selectedModelId: string;
-  selectedReasoningModelId: string;
-  selectedVisibilityType: VisibilityType;
-  isReadonly: boolean;
+  chatId: string
+  selectedModelId: string
+  selectedReasoningModelId: string
+  selectedVisibilityType: VisibilityType
+  isReadonly: boolean
 }) {
-  const router = useRouter();
-  const { open } = useSidebar();
+  const router = useRouter()
+  const { open } = useSidebar()
 
-  const { width: windowWidth } = useWindowSize();
+  const { width: windowWidth } = useWindowSize()
 
-  const { clearState } = useDeepResearch();
+  const { clearState } = useDeepResearch()
 
   return (
-    <header className="flex sticky top-0 bg-background py-1.5 items-center px-2 md:px-2 gap-2">
+    <header className='flex sticky top-0 bg-background py-1.5 items-center px-2 md:px-2 gap-2'>
       <SidebarToggle />
 
       {(!open || windowWidth < 768) && (
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
-              variant="outline"
-              className="order-2 md:order-1 md:px-2 px-2 md:h-fit ml-auto md:ml-0"
+              variant='outline'
+              className='order-2 md:order-1 md:px-2 px-2 md:h-fit ml-auto md:ml-0'
               onClick={() => {
-                router.push('/');
-                clearState();
+                router.push('/')
+                clearState()
 
-                router.refresh();
+                router.refresh()
               }}
             >
               <PlusIcon />
-              <span className="md:sr-only">New Chat</span>
+              <span className='md:sr-only'>New Chat</span>
             </Button>
           </TooltipTrigger>
           <TooltipContent>New Chat</TooltipContent>
         </Tooltip>
       )}
-
+{/* 
       {!isReadonly && (
         <ModelSelector
-          label="Router Model"
+          label='Router Model'
           models={models}
           selectedModelId={selectedModelId}
-          className="order-1 md:order-2"
+          className='order-1 md:order-2'
         />
       )}
       {!isReadonly && (
         <ModelSelector
-          label="Reasoning Model"
+          label='Reasoning Model'
           models={reasoningModels}
           selectedModelId={selectedReasoningModelId}
-          className="order-1 md:order-2"
+          className='order-1 md:order-2'
         />
       )}
 
@@ -81,9 +81,9 @@ function PureChatHeader({
         <VisibilitySelector
           chatId={chatId}
           selectedVisibilityType={selectedVisibilityType}
-          className="order-1 md:order-3"
+          className='order-1 md:order-3'
         />
-      )}
+      )} */}
 
       {/* <Button
         className="bg-orange-500 dark:bg-zinc-100 hover:bg-orange-800 dark:hover:bg-zinc-200 text-zinc-50 dark:text-zinc-900 hidden md:flex py-1.5 px-2 h-fit md:h-[34px] order-4 md:ml-auto"
@@ -98,7 +98,7 @@ function PureChatHeader({
         </Link>
       </Button> */}
 
-      <Button
+      {/* <Button
         variant="outline"
         className="hidden md:flex py-1.5 px-2 h-fit md:h-[34px] order-4 md:ml-auto"
         asChild
@@ -124,36 +124,39 @@ function PureChatHeader({
             Star on GitHub
           </span>
         </Link>
-      </Button>
+      </Button> */}
 
-      <Button
-        variant="outline"
-        className="hidden md:flex py-1.5 px-2 h-fit md:h-[34px] order-4 "
+      {/* <Button
+        variant='outline'
+        className='hidden md:flex py-1.5 px-2 h-fit md:h-[34px] order-4 '
         asChild
       >
-        <Link href="https://firecrawl.dev/" target="_blank">
-          <span className="flex items-center gap-2">
+        <Link href='https://firecrawl.dev/' target='_blank'>
+          <span className='flex items-center gap-2'>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              xmlns='http://www.w3.org/2000/svg'
+              width='16'
+              height='16'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             >
-              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+              <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z' />
             </svg>
             Get Firecrawl API Key
           </span>
         </Link>
-      </Button>
+      </Button> */}
     </header>
-  );
+  )
 }
 
 export const ChatHeader = memo(PureChatHeader, (prevProps, nextProps) => {
-  return prevProps.selectedModelId === nextProps.selectedModelId && prevProps.selectedReasoningModelId === nextProps.selectedReasoningModelId;
-});
+  return (
+    prevProps.selectedModelId === nextProps.selectedModelId &&
+    prevProps.selectedReasoningModelId === nextProps.selectedReasoningModelId
+  )
+})
