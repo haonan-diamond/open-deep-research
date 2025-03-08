@@ -36,6 +36,41 @@
       "when": 1733945232355,
       "tag": "0004_odd_slayback",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1734550232355,
+      "tag": "0007_create_company",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1734550232356,
+      "tag": "0008_create_agent_table",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1734550232357,
+      "tag": "0009_create_account_table",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1734550232358,
+      "tag": "0008_company_info_cache",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1734550232359,
+      "tag": "0009_agent_runs",
+      "breakpoints": true
     }
   ]
 }

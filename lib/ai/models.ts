@@ -43,5 +43,5 @@ export const reasoningModels: Array<Model> = [
   }
 ] as const;
 
-export const DEFAULT_MODEL_NAME: string = 'gpt-4o';
-export const DEFAULT_REASONING_MODEL_NAME: string = 'o1';
+export const DEFAULT_MODEL_NAME: string = 'gpt-4o-mini';
+export const DEFAULT_REASONING_MODEL_NAME: string = 'o3-mini';

@@ -2,52 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
-    }
-}
-
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
-}
-
 @layer base {
     :root {
-        --background: 0 0% 100%;
+        --background: 234 60% 96%;
         --foreground: 240 10% 3.9%;
         --card: 0 0% 100%;
         --card-foreground: 240 10% 3.9%;
         --popover: 0 0% 100%;
         --popover-foreground: 240 10% 3.9%;
-        --primary: 20 100% 48%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
+        --primary: 0 0% 0%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 234 60% 92%;
         --secondary-foreground: 240 5.9% 10%;
-        --muted: 0 0% 100%;
+        --muted: 234 40% 90%;
         --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
+        --accent: 234 60% 92%;
         --accent-foreground: 240 5.9% 10%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 10% 3.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
+        --border: 234 30% 85%;
+        --input: 234 30% 85%;
+        --ring: 234 60% 70%;
         --radius: 0.5rem;
         --sidebar-background: 0 0% 98%;
         --sidebar-foreground: 240 5.3% 26.1%;
@@ -57,6 +32,11 @@
         --sidebar-accent-foreground: 240 5.9% 10%;
         --sidebar-border: 220 13% 91%;
         --sidebar-ring: 217.2 91.2% 59.8%;
+        --brand-primary: 0 0% 0%;
+        --brand-secondary: 234 60% 92%;
+        --brand-accent: 234 60% 70%;
+        --brand-background: 234 60% 96%;
+        --brand-foreground: 240 10% 3.9%;
     }
     .dark {
         --background: 240 10% 3.9%;
@@ -65,19 +45,19 @@
         --card-foreground: 0 0% 98%;
         --popover: 240 10% 3.9%;
         --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
+        --primary: 0 0% 0%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 234 30% 20%;
         --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
+        --muted: 234 30% 20%;
         --muted-foreground: 240 5% 64.9%;
-        --accent: 240 3.7% 15.9%;
+        --accent: 234 30% 20%;
         --accent-foreground: 0 0% 98%;
         --destructive: 0 62.8% 30.6%;
         --destructive-foreground: 0 0% 98%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
+        --border: 234 30% 20%;
+        --input: 234 30% 20%;
+        --ring: 234 60% 70%;
         --chart-1: 220 70% 50%;
         --chart-2: 160 60% 45%;
         --chart-3: 30 80% 55%;
@@ -91,6 +71,11 @@
         --sidebar-accent-foreground: 240 4.8% 95.9%;
         --sidebar-border: 240 3.7% 15.9%;
         --sidebar-ring: 217.2 91.2% 59.8%;
+        --brand-primary: 0 0% 0%;
+        --brand-secondary: 234 30% 20%;
+        --brand-accent: 234 60% 70%;
+        --brand-background: 240 10% 3.9%;
+        --brand-foreground: 0 0% 98%;
     }
 }
 
@@ -175,4 +160,41 @@
 
 .suggestion-highlight {
     @apply bg-blue-200 hover:bg-blue-300 dark:hover:bg-blue-400/50 dark:text-blue-50 dark:bg-blue-500/40;
+}
+
+/* Custom styles for Percipient branding */
+.bg-brand-primary {
+    background-color: hsl(var(--brand-primary));
+}
+
+.bg-brand-secondary {
+    background-color: hsl(var(--brand-secondary));
+}
+
+.bg-brand-accent {
+    background-color: hsl(var(--brand-accent));
+}
+
+.text-brand-primary {
+    color: hsl(var(--brand-primary));
+}
+
+.text-brand-secondary {
+    color: hsl(var(--brand-secondary));
+}
+
+.text-brand-accent {
+    color: hsl(var(--brand-accent));
+}
+
+.border-brand-primary {
+    border-color: hsl(var(--brand-primary));
+}
+
+.border-brand-secondary {
+    border-color: hsl(var(--brand-secondary));
+}
+
+.border-brand-accent {
+    border-color: hsl(var(--brand-accent));
 }

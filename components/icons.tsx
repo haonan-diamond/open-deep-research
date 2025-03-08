@@ -1160,9 +1160,29 @@ export function ExternalLinkIcon({
       className={className}
       {...props}
     >
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
       <polyline points="15 3 21 3 21 9" />
       <line x1="10" y1="14" x2="21" y2="3" />
     </svg>
   );
 }
+
+export const BuildingIcon = ({ size = 16 }: { size?: number }) => {
+  return (
+    <svg
+      height={size}
+      width={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+      <line x1="9" y1="6" x2="15" y2="6"></line>
+      <line x1="9" y1="10" x2="15" y2="10"></line>
+      <line x1="9" y1="14" x2="15" y2="14"></line>
+    </svg>
+  );
+};
