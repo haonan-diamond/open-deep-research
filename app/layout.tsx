@@ -9,10 +9,9 @@ import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://extract.chat'),
-  title: 'Extract Chat - by Firecrawl',
+  title: 'Percipient - Account Planning',
   description:
-    'Extract Chat allows you to extract information from any website with the help of an AI chatbot.',
+    'Percipient is a tool that helps you plan your account planning.',
 };
 
 export const viewport = {
