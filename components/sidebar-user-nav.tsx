@@ -22,7 +22,7 @@ import {
 } from '@/components/ui/sidebar';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { User } from 'lucide-react';
+import { User as UserIcon } from 'lucide-react';
 
 export function SidebarUserNav({ user }: { user: User }) {
   return (

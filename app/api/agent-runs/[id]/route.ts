@@ -11,7 +11,7 @@ const updateAgentRunSchema = z.object({
 // PATCH /api/agent-runs/[id] - Update an agent run status
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await auth();
@@ -21,7 +21,7 @@ export async function PATCH(
     }
     
     // Ensure params is properly awaited
-    const { id } = params;
+    const { id } = await context.params;
     
     if (!id) {
       return NextResponse.json(

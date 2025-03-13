@@ -5,7 +5,7 @@ import { getAccountById } from '@/lib/db/queries';
 // GET /api/accounts/[id] - Get a single account by ID
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await auth();
@@ -14,7 +14,8 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
     
-    const account = await getAccountById(params.id);
+    const { id } = await context.params;
+    const account = await getAccountById(id);
     
     if (!account) {
       return NextResponse.json(

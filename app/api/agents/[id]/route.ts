@@ -5,7 +5,7 @@ import { getAgentById } from '@/lib/db/queries';
 // GET /api/agents/[id] - Get a single agent by ID
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await auth();
@@ -14,7 +14,8 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
     
-    const agent = await getAgentById(params.id);
+    const { id } = await context.params;
+    const agent = await getAgentById(id);
     
     if (!agent) {
       return NextResponse.json(

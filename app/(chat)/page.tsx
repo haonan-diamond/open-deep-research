@@ -9,7 +9,7 @@ import { ChatWithParams } from '@/components/chat-with-params';
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const id = generateUUID();
 
@@ -27,10 +27,11 @@ export default async function Page({
     DEFAULT_REASONING_MODEL_NAME;
 
   // Extract query parameters
-  const initialPrompt = searchParams.initialPrompt as string | undefined;
-  const searchType = searchParams.searchType as string | undefined;
-  const accountId = searchParams.accountId as string | undefined;
-  const agentId = searchParams.agentId as string | undefined;
+  const params = await searchParams;
+  const initialPrompt = params.initialPrompt as string | undefined;
+  const searchType = params.searchType as string | undefined;
+  const accountId = params.accountId as string | undefined;
+  const agentId = params.agentId as string | undefined;
 
   // If we have query parameters, use the ChatWithParams component
   if (initialPrompt && searchType) {
